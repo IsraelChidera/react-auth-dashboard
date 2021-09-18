@@ -27,38 +27,53 @@ const Login = () => {
   }
 
   return (
-    <div>
-      Login
-      {/* {currentUser.email} */}
-      <form onSubmit={handleSubmit}>
+    <div className="register">
+      <div className="logindiv">
+      </div>
 
-        <div>
-          <label>Email</label>
-          <input 
-            type="email" 
-            ref={emailRef}
-          />
-        </div>
-
-        <div>
-          <label>Password</label>
-          <input 
-            type="password" 
-            ref={passwordRef}
-            />
-        </div>
-
-        <div>
-          <button disabled={loading}>
-            Login
-          </button>
-        </div>
-        <p>
-          Need an account?
-          <Link to="/register">Sign up here</Link>
+      <div className="register-form">
+        
+        {/* {currentUser.email} */}
+        <p className="login-header">
+          Login
         </p>
-      </form>
-      {error && <p style={{fontSize:"12px"}}> {error} </p>}
+        <form onSubmit={handleSubmit}>
+        
+
+          <div>
+            <label>Email</label>
+            <input 
+              type="email" 
+              ref={emailRef}
+              placeholder="Enter Email"
+            />
+          </div>
+
+          <div>
+            <label>Password</label>
+            <input 
+              type="password" 
+              ref={passwordRef}
+              placeholder="Enter Password"
+              />
+          </div>
+
+          {error && <p style={{fontSize:"12px",color:"red"}}> {error} </p>}
+          <div>
+            <button
+              className="btn-login" 
+              disabled={loading}
+            >
+              Login
+            </button>
+          </div>
+          <p className="special-para">
+            Need an account?
+            <Link to="/register">Sign up here</Link>
+          </p>
+        </form>
+        
+      </div>
     </div>
   )
 }

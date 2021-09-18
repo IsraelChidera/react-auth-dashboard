@@ -20,23 +20,24 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
-            <h2>Profile dashboard</h2>
-            <p>
-                <strong>Email: </strong>
+        <div className="dashboard">
+            <h2 className="login-header">Profile dashboard</h2>
+            <p style={{marginTop: "1rem"}}>
+                <strong>Your Email is: </strong>
                 {currentUser.email}
             </p>
 
-            <p>
+            {/* <p>
                 <strong>Name: </strong>
                 {currentUser.name}
             </p>
             <p>
                 <strong>Mobile: </strong>
                 {currentUser.mobile}
-            </p>
+            </p> */}
             {error && <p style={{fontSize:"12px"}}> {error} </p>}
             <button
+                className="btn-dashboard"
                 onClick={handleLogout}
             >
                 Sign Out

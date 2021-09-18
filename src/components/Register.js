@@ -28,54 +28,67 @@ const Register = () => {
   }
 
   return (
-    <div>
-      Register
-      {/* {currentUser.email} */}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input 
-            type="text" 
-            ref={nameRef}
-          />
-        </div>
+    <div className="register">
+      <div className="signdiv">
+      </div>
 
-        <div>
-          <label>Mobile</label>
-          <input 
-            type="text" 
-            ref={mobileRef}
-          />
-        </div>
-
-
-        <div>
-          <label>Email</label>
-          <input 
-            type="email" 
-            ref={emailRef}
-          />
-        </div>
-
-        <div>
-          <label>Password</label>
-          <input 
-            type="password" 
-            ref={passwordRef}
+      <div className="register-form">
+        <p className="sign-header">Sign Up</p>
+        {/* {currentUser.email} */}
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Name</label>
+            <input 
+              type="text" 
+              ref={nameRef}
+              placeholder="Name"
             />
-        </div>
+          </div>
 
-        <div>
-          <button disabled={loading}>
-            Login
-          </button>
-        </div>
-        <p>
-          Already have an account?
-          <Link to="/login">Login here</Link>
-        </p>
-      </form>
-      {error && <p style={{fontSize:"12px"}}> {error} </p>}
+          <div>
+            <label>Mobile</label>
+            <input 
+              type="text" 
+              ref={mobileRef}
+              placeholder="Mobile"
+            />
+          </div>
+
+
+          <div>
+            <label>Email</label>
+            <input 
+              type="email" 
+              ref={emailRef}
+              placeholder="Email"
+            />
+          </div>
+
+          <div>
+            <label>Password</label>
+            <input 
+              type="password" 
+              ref={passwordRef}
+              placeholder="Password"
+              />
+          </div>
+
+          {error && <p style={{fontSize:"12px",color:"red"}}> {error} </p>}
+          <div>
+            <button 
+              className="btn"
+              disabled={loading}
+            >
+              Login
+            </button>
+          </div>
+          <p className="special-para">
+            Already have an account?
+            <Link to="/login">Login here</Link>
+          </p>
+        </form>
+        
+      </div>
     </div>
   )
 }

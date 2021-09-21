@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {useAuth} from '../contexts/AuthContext';
 import {Link, useHistory} from 'react-router-dom';
+import {auth} from '../firebase';
 
 const Register = () => {
   const nameRef = useRef()
@@ -20,6 +21,7 @@ const Register = () => {
     try {
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value, mobileRef.current.value, nameRef.current.value)
+      await auth.currentUser.updateProfile({ displayName: nameRef.current.value })
       history.push("/login")
     } catch {
       setError("Failed to create an account")

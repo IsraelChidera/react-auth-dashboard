@@ -24,7 +24,7 @@ const Dashboard = () => {
             <h2 className="login-header">Profile dashboard</h2>
             <p style={{marginTop: "1rem"}}>
                 <strong>Your Email is: </strong>
-                {currentUser.email}
+                {currentUser.displayName}
             </p>
 
             {/* <p>
